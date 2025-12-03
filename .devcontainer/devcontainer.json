@@ -1,0 +1,12 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "Proyecto Grupal APIs",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+"remoteUser": "node",
+"features": {
+	"ghcr.io/devcontainers-extra/features/http-server:1": {}
+},
+"postStartCommand": "http-server -p 3030"
+}

@@ -1,0 +1,17 @@
+Objetivo: Practicar el consumo de una API real (solo de lectura).
+
+Se pide:
+
+   - Estudiar alguna de las APIs indicadas en el documento anterior.
+   
+   - Realizar una página única (el javascrip y css son archivos aparte) 
+        que consuma la API estudiada.
+
+   - La aplicación debe al menos realizar las siguientes tareas:
+       --> Mostrar el listado de alguno de los elementos (con algunos datos).
+
+       --> Que al seleccionar alguno de los elementos del listado haga otra 
+            llamada a la API para obtener otros datos relacionados con el 
+            elemento seleccionado.
+
+       --> Que se pueda actualizar la selección y modificar los datos. 

@@ -15,3 +15,7 @@ Se pide:
             elemento seleccionado.
 
        --> Que se pueda actualizar la selección y modificar los datos. 
+     
+     Opcional:
+       --> Que se almacene en local el elemento seleccionado de forma 
+           que en la siguiente visita se carge directamente dicho elemento.

@@ -1,0 +1,36 @@
+#layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    justify-content: space-around;
+    gap: 5px 15px;
+}
+
+.oculto {
+    display: none;
+}
+/* .reoculto {
+    display: none;
+} */
+
+.episodios {
+    background-color: yellowgreen;
+}
+
+.episodio {
+    background-color: orange;
+}
+
+.personaje {
+    background-color: blue;
+}
+/* Colores de la serie
+color fondo para Episodios #83D2E4 (COLOR RICK)
+color fondo episodio #8BCF21 (COLOR PORTAL)
+color fondo personaje #FAFD7CFF (COLOR MORTY)
+color fondo 1 #E5D29F
+color fondo 2 #E7E0DB
+
+fuente letra para titulo (relacionado con rick y morty)
+https://fonts.google.com/specimen/Freckle+Face
+*/

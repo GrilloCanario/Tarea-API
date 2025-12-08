@@ -1,0 +1,109 @@
+/*-- importar fuente de letra de header --*/
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+
+#layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-content: space-around;
+    gap: 10px 15px;
+}
+
+.oculto {
+    display: none;
+}
+
+.episodios {
+    background-color: #83D2E4;
+    border: 1px solid #e5e7eb;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    grid-column: 1 / 2;
+    position: relative;
+}
+
+.episodio {
+    background-color: #8BCF21;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 384px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    grid-column: 2 / 3;
+}
+
+.personaje {
+    background-color: #FAFD7CFF;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 384px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    grid-column: 3 / 4;
+}
+
+/* ---------------- CSS del Main ---------------- */
+header {
+    background-image: url(BG-R&M.png);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    width: 100%;                  
+    height: 20vh;                 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+header h1 {
+    font-family: "Freckle Face", cursive;
+    font-size: 6vw;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+h2,h3,h4 {
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #E7E0DB;
+    min-height: 100vh;  
+    display: flex;       
+    flex-direction: column;
+}
+main{
+    background-color: #E7E0DB;
+    padding: 20px;
+    flex: 1
+}
+footer {
+    background-color: #E5D29F;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ------------- Boton de reinicio ------------- */
+button {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+#clear-storage {
+    display: block;
+    margin: 0.75rem auto;
+}

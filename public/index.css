@@ -28,9 +28,10 @@
 .episodio {
     background-color: #8BCF21;
     border: 1px solid #e5e7eb;
+    padding: 10px;
     border-radius: 8px;
     overflow: hidden;
-    max-width: 384px;
+    max-width: 100%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     grid-column: 2 / 3;
 }
@@ -38,9 +39,10 @@
 .personaje {
     background-color: #FAFD7CFF;
     border: 1px solid #e5e7eb;
+    padding: 10px;
     border-radius: 8px;
     overflow: hidden;
-    max-width: 384px;
+    max-width: 100%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     grid-column: 3 / 4;
 }

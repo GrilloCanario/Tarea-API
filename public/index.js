@@ -2,6 +2,10 @@ const episodios = document.querySelector(".episodios");
 const episodio = document.querySelector(".episodio");
 const personaje = document.querySelector(".personaje");
 
+//- EL CÓDIGO COMENTADO ES UN INTENTO FALLIDO DE UTILIZAR LOCAL.STORAGE
+// const LS_EPISODE = "selectedEpisode";
+// const LS_CHARACTER = "selectedCharacter";
+
 //* -------------- OCULTAR EPISODIO Y PERSONAJE --------------
 episodios.addEventListener("change", () => {
     episodio.classList.remove("oculto");
@@ -20,6 +24,12 @@ const clearStorage = document.getElementById('clear-storage');
 
 const epsTotal = [];
 loadEpisodes();
+
+// (async () => {
+//     await loadEpisodes();
+//     restoreSelection();
+// })()
+
 async function loadEpisodes() {
     try {
         let url = 'https://rickandmortyapi.com/api/episode';
@@ -37,6 +47,7 @@ async function loadEpisodes() {
         console.log('Error en loadEpisodes: ', error);
     }
 }
+
 function insertEpisodes(episode) {
     const option = document.createElement('option');
     option.textContent = `${episode.episode} - ${episode.name}`;
@@ -52,6 +63,8 @@ episodesList.addEventListener("change", async () => {
     if (!episodio) {
         return;
     }
+    // localStorage.setItem(LS_EPISODE, id);
+
     episodeInfo.innerHTML = `
         <p><strong>Título:</strong> ${episodio.name}</p>
         <p><strong>Episodio:</strong> ${episodio.episode}</p>
@@ -65,12 +78,12 @@ episodesList.addEventListener("change", async () => {
         throw new Error('Error en la red');
     }
     let characters = await response.json();
-    
-    characterList.textContent="";
+
+    characterList.textContent = "";
     characters.forEach(character => {
         insertCharacters(character);
     });
-    
+
 });
 
 function insertCharacters(character) {
@@ -78,10 +91,12 @@ function insertCharacters(character) {
     option.value = character.id;
     option.textContent = character.name;
     characterList.append(option);
-   
 }
+
 characterList.addEventListener("change", async () => {
-    const id = characterList.value; 
+    const id = characterList.value;
+
+    // localStorage.setItem(LS_CHARACTER, id);
 
     // petición a la API
     const response = await fetch('https://rickandmortyapi.com/api/character/' + id);
@@ -92,12 +107,40 @@ characterList.addEventListener("change", async () => {
         <p><strong>Nombre:</strong> ${character.name}</p>
         <p><strong>Estado:</strong> ${character.status}</p>
         <p><strong>Especie:</strong> ${character.species}</p>
-        <p><img src="${character.image}" width="200"/></p>
+        <p><strong>Género:</strong> ${character.gender}</p>
+        <p><strong>Origen:</strong> ${character.origin.name}</p>
+        <p><strong>Ubucación:</strong> ${character.location.name}</p>
+        <p><img src="${character.image}"/></p>
     `;
-    characterList.addEventListener("change", async () => {
-    const id = characterList.value;
 
-   
 });
 
+// function restoreSelection() {
+//     const savedEpisode = localStorage.getItem(LS_EPISODE);
+//     const savedCharacter = localStorage.getItem(LS_CHARACTER);
+
+//     if (savedEpisode) {
+//         episodesList.value = savedEpisode;
+//         episodesList.dispatchEvent(new Event("change"));
+//     }
+
+//     if (savedCharacter) {
+//         setTimeout(() => {
+//             characterList.value = savedCharacter;
+//             characterList.dispatchEvent(new Event("change"));
+//         }, 500);
+//     }
+// }
+
+
+// clearStorage.addEventListener("click", () => {
+//     localStorage.removeItem("selectedEpisode");
+//     localStorage.removeItem("selectedCharacter");
+//     location.reload();
+// });
+clearStorage.addEventListener("click", () => {
+    const p = document.createElement("p");
+    p.textContent = `No funciona el Guardar ni el Reinicio`;
+
+    episodios.append(p);
 });

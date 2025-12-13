@@ -48,7 +48,11 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     grid-column: 3 / 4;
 }
-
+img {
+    width: 100px;
+    border-radius: 10px;
+    
+}
 /* ---------------- CSS del Main ---------------- */
 header {
     background-image: url(BG-R&M.png);

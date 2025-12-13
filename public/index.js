@@ -72,14 +72,15 @@ episodesList.addEventListener("change", async () => {
         <p><strong>Personajes en el episodio:</strong> ${episodio.characters.length}</p>
     
     `;
-    const idcharslist = episodio.characters.map(pito => pito.slice(42));
+    const idcharslist = episodio.characters.map(char => char.slice(42));
     let response = await fetch('https://rickandmortyapi.com/api/character/' + idcharslist.join(","));
     if (!response.ok) {
         throw new Error('Error en la red');
     }
     let characters = await response.json();
 
-    characterList.textContent = "";
+    //characterList.textContent = "";
+    characterList.innerHTML = '<option disabled selected>Elige un personaje...</option>';
     characters.forEach(character => {
         insertCharacters(character);
     });
@@ -109,7 +110,7 @@ characterList.addEventListener("change", async () => {
         <p><strong>Especie:</strong> ${character.species}</p>
         <p><strong>Género:</strong> ${character.gender}</p>
         <p><strong>Origen:</strong> ${character.origin.name}</p>
-        <p><strong>Ubucación:</strong> ${character.location.name}</p>
+        <p><strong>Ubicación Actual:</strong> ${character.location.name}</p>
         <p><img src="${character.image}"/></p>
     `;
 
@@ -140,7 +141,7 @@ characterList.addEventListener("change", async () => {
 // });
 clearStorage.addEventListener("click", () => {
     const p = document.createElement("p");
-    p.textContent = `No funciona el Guardar ni el Reinicio`;
+    p.textContent = `No funciona el guardado de selección.`;
 
     episodios.append(p);
 });
